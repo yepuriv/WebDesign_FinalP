@@ -1,6 +1,6 @@
 import React from "react";
 
-const CategoriesTable = () => {
+const ProductsStatistics = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const CategoriesTable = () => {
   );
 };
 
-export default CategoriesTable;
+export default ProductsStatistics;

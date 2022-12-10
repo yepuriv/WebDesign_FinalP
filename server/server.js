@@ -6,11 +6,13 @@ import productRoute from "./Routes/ProductRoutes.js";
 import { errorHandler, notFound } from "./Middleware/Errors.js";
 import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
+import cors from "cors" ;
 
 dotenv.config();
+connectDatabase();
 const app = express();
 app.use(express.json());
-connectDatabase(); 
+app.use(cors())
 
 // API
 app.use("/api/import", ImportData);
@@ -25,7 +27,6 @@ app.get("/api/config/paypal", (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 2727;
 
 app.listen(PORT, console.log(`server run in port ${PORT}`));
-

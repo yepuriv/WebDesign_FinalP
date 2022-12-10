@@ -180,5 +180,6 @@ const products = [
     rating: 5,
     numReviews: 100,
   },
-]
+];
+
 export default products;

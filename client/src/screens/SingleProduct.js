@@ -100,7 +100,7 @@ const SingleProduct = ({ history, match }) => {
                     {product.countInStock > 0 ? (
                       <>
                         <div className="flex-box d-flex justify-content-between align-items-center">
-                          <h6>Quantity</h6>
+                          <h6>Number of months:</h6>
                           <select
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}

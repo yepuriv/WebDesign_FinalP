@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { PayPalButton } from "react-paypal-button-v2";
 import { createOrder } from "../Redux/Actions/OrderActions";
 import { ORDER_CREATE_RESET } from "../Redux/Constants/OrderConstants";
 import Header from "./../components/Header";
@@ -131,7 +132,7 @@ const PlaceOrderScreen = ({ history }) => {
                       </Link>
                     </div>
                     <div className="mt-3 mt-md-0 col-md-2 col-6  d-flex align-items-center flex-column justify-content-center ">
-                      <h4>QUANTITY</h4>
+                      <h4>Number of months:</h4>
                       <h6>{item.qty}</h6>
                     </div>
                     <div className="mt-3 mt-md-0 col-md-2 col-6 align-items-end  d-flex flex-column justify-content-center ">
@@ -174,9 +175,9 @@ const PlaceOrderScreen = ({ history }) => {
               </tbody>
             </table>
             {cart.cartItems.length === 0 ? null : (
-              <button type="submit" onClick={placeOrderHandler}>
-                PLACE ORDER
-              </button>
+              
+              <PayPalButton onClick={placeOrderHandler}/>
+              
             )}
             {error && (
               <div className="my-3 col-12">
